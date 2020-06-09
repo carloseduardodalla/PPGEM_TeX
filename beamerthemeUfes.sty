@@ -1,0 +1,98 @@
+% Copyright 2007 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\mode<presentation>
+
+%\useinnertheme[shadow=true]{rounded}
+%\useoutertheme{shadow}
+%\usecolortheme{orchid}
+%\usecolortheme{whale}
+
+%\setbeamerfont{block title}{size={}}
+
+%% Use Serif Font in Math Equations
+\usefonttheme[onlymath]{serif}
+
+%% Put number in Table of Contents
+%\setbeamertemplate{section in toc}[sections numbered]
+%\setbeamertemplate{section in toc}[ball unnumbered]
+%\setbeamertemplate{subsection in toc}[subsections numbered]
+\setbeamertemplate{subsection in toc}[ball unnumbered]
+
+\makeatother
+
+%% Edit Footnotes at Frames
+\setbeamertemplate{footline}{
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=.3\paperwidth,ht=3.25ex,dp=1ex,center]{authorfoot}%
+			\usebeamerfont{authorfoot}PPGEM/UFES
+		\end{beamercolorbox}%
+	
+		\begin{beamercolorbox}[wd=.4\paperwidth,ht=3.25ex,dp=1ex,center]{authorfoot}%
+			\usebeamerfont{titlefoot}\insertsection
+		\end{beamercolorbox}%
+	
+		\begin{beamercolorbox}[wd=.3\paperwidth,ht=3.25ex,dp=1ex,center]{datefoot}%
+			\usebeamerfont{datefoot}\today \hspace{0.5cm} \insertframenumber/\inserttotalframenumber
+		\end{beamercolorbox}}%
+		\vskip0pt%
+		}
+\makeatletter
+
+%% Set color, inner theme, frame title formats, etc.
+\usecolortheme{ufes}
+\useinnertheme{circles}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+
+%% Themes Options [minimal, sideleftright, sidebarleft]
+
+%% [sidebarleft]
+\DeclareOptionBeamer{sidebarleft}{
+	\useoutertheme[height=30px,width=50px,left]{sidebar}
+	\logo{\includegraphics[height=30px,width=50px]{./figures/marca_ufes.png}}
+	}
+
+
+%% [minimal]
+\DeclareOptionBeamer{minimal}{
+    \setbeamertemplate{frametitle}{
+        \nointerlineskip
+        \begin{beamercolorbox}[sep=0.3cm,ht=30pt,wd=\paperwidth]{frametitle}
+            \vbox{} %\vskip-2ex%
+            \strut\insertframetitle\strut
+            \vskip-1.0ex% %\vskip-0.8ex% 
+        \end{beamercolorbox} % Reference:
+    	}
+    }
+
+%% [sidebarright]
+\DeclareOptionBeamer{sidebarright}{
+	\useoutertheme[height=27pt,width=50pt,right]{sidebar}
+	\logo{\includegraphics[width=1.75cm]{./figures/Caltech_LOGO-Orange_RGB.png}}
+	}
+
+\ProcessOptionsBeamer
+
+%% Set the font themes to be used here
+%\usepackage{helvet}  % use Helvetica as text fonts
+
+%% Remove navigation symbols from appearing
+%\setbeamertemplate{navigation symbols}{}
+\addtobeamertemplate{navigation symbols}{}{%
+	\usebeamerfont{footline}%
+	\usebeamercolor[fg]{footline}%
+}
+
+\setbeamertemplate{blocks}[rounded][shadow=true]
+% Title page
+\setbeamertemplate{title page}[default][rounded=true, shadow=true]
+
+\mode
+<all>
